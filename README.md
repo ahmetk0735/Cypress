@@ -1,2 +1,0 @@
-# Cypress
-udemy cypress dersleri

@@ -1,21 +1,26 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "xvjjon"
+  projectId: "xvjjon",
   video: true,
   reporter: "cypress-mochawesome-reporter",
+
+  env: {
+    hidexhr: true,
+    amazon: "https://www.amazon.de",
+    google: "https://www.google.com",
+    saucedemo: "https://www.saucedemo.com",
+  },
+
   e2e: {
+    baseUrl: "https://example.cypress.io",
     setupNodeEvents(on, config) {
-      // implement node event listeners here
       require("cypress-mochawesome-reporter/plugin")(on);
     },
-    // baseUrl:"https://example.cypress.io/"
-
-    env: {
-      hidexhr: true,
-      amazon: "https://www.amazon.de",
-      google: "https://www.google.com",
-      saucedemo: "https://www.saucedemo.com",
-    },
+    specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx}",
+    experimentalWebKitSupport: true, // npm i -D playwright-webkit yuklenecek
+    experimentalRunAllSpecs: true,
+    //watchForFileChanges:false,  // otomatik testi durduruyor kaydettikten sonra
+    experimentalStudio: true,
   },
 });

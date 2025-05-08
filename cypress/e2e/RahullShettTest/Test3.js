@@ -19,6 +19,14 @@ describe("Automate check boxes", () => {
         $e1.click();
       }
     });
+    //autocomplete
     cy.get("#autocomplete").should("have.value", "India");
+
+    // visible invisible
+    cy.get("#displayed-text").should("be.visible");
+    cy.get("#hide-textbox").click();
+    cy.get("#displayed-text").should("not.be.visible");
+    cy.get("#show-textbox").click();
+    cy.get("#displayed-text").should("be.visible");
   });
 });

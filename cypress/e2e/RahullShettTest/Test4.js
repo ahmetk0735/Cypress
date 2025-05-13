@@ -1,7 +1,7 @@
 describe("Automate check boxes", () => {
   it("My firstTest case", () => {
     // Check boxes
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit("https://qaclickacademy.com/practice.php");
     cy.get("#alertbtn").click();
     cy.get('[value="Confirm"]').click();
     //window:alert
@@ -15,5 +15,6 @@ describe("Automate check boxes", () => {
       //Mocha
       expect(str).to.equal("Hello , Are you sure you want to confirm?");
     });
+    cy.get("#opentab").invoke("removeAttr", "target").click();
   });
 });

@@ -22,5 +22,7 @@ module.exports = defineConfig({
     experimentalRunAllSpecs: true,
     //watchForFileChanges:false,  // otomatik testi durduruyor kaydettikten sonra
     experimentalStudio: true,
+    experimentalSessionAndOrigin: true,
+    chromeWebSecurity: false,
   },
 });

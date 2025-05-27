@@ -19,10 +19,6 @@ describe("Calendar test", () => {
     //cy.log(cy.get(".react-date-picker__inputGroup").text);
     cy.get(".react-date-picker__inputGroup__input").each(($el, index) => {
       cy.wrap($el).invoke("val").should("eq", expectedList[index]);
-      /*.then(function(text)
-    {
-        console.log(text)
-    })*/
     });
   });
 });

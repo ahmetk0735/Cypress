@@ -56,3 +56,14 @@ Cypress.Commands.add("loginWithSession", (username, password) => {
       .and("contain", "New Post");
   });
 });
+Cypress.Commands.add("selectProduct", (productName) => {
+  cy.get("h4.card-title").each(($el, index, $list) => {
+    if ($el.text().includes(productName)) {
+      // Doğrudan bu başlığın bulunduğu kart içindeki butonu seç
+      cy.wrap($el)
+        .parents(".card") // Kart container'a ulaş
+        .find("button.btn.btn-info") // Sadece o kart içindeki buton
+        .click();
+    }
+  });
+});

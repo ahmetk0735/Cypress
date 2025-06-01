@@ -23,11 +23,10 @@ describe("My second Test Suite", () => {
     );
     cy.get("#inlineRadio3").should("be.disabled");
 
-    // Shop linkine tıkla
     cy.get(":nth-child(2) > .nav-link").click();
 
-    // Ürünleri seç
-    cy.selectProduct("Blackberry");
-    cy.selectProduct("Nokia Edge");
+    this.data.productName.forEach(function (element) {
+      cy.selectProduct(element);
+    });
   });
 });

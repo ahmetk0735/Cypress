@@ -22,7 +22,7 @@ describe("My second Test Suite", () => {
       "2"
     );
     cy.get("#inlineRadio3").should("be.disabled");
-
+    cy.pause();
     cy.get(":nth-child(2) > .nav-link").click();
 
     this.data.productName.forEach(function (element) {

@@ -1,3 +1,4 @@
+import HomePage from "./pageObjects/HomePage";
 describe("My second Test Suite", () => {
   before(function () {
     // Load test data from fixture file
@@ -7,6 +8,7 @@ describe("My second Test Suite", () => {
   });
 
   it("My FirstTest case", function () {
+    const homPage = new HomePage();
     cy.visit("https://rahulshettyacademy.com/angularpractice/");
 
     // Form işlemleri
